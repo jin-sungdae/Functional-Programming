@@ -2,9 +2,9 @@ package org.example.util;
 
 import java.util.function.Function;
 
-public class Adder implements Function<Integr, Integer> {
+public class Adder implements Function<Integer, Integer> {
     @Override
-    public Integer apply(Integr integr) {
-        return null;
+    public Integer apply(Integer integr) {
+        return integr + 10;
     }
 }
