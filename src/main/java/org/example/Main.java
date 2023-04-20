@@ -10,9 +10,8 @@ import java.util.function.Supplier;
 public class Main {
     public static void main(String[] args) {
 
-
         /**
-         *  test
+         *  testt
          *  Funtional InterFace input 1개일떄
          */
         Function<Integer, Integer> myAdder = new Adder();
