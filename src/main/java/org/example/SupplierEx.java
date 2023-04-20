@@ -1,6 +1,6 @@
 package org.example;
 
-public class Supplier {
+public class SupplierEx {
     public static void main(String[] args) {
         java.util.function.Supplier<String> myStringSupplier = () -> "hello world!";
         System.out.println(myStringSupplier.get());

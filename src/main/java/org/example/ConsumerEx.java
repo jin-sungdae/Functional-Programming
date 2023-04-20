@@ -2,8 +2,9 @@ package org.example;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 
-public class Consumer {
+public class ConsumerEx {
     public static void main(String[] args) {
         java.util.function.Consumer<String> myStringConsumer = (String str) -> {
             System.out.println(str);
@@ -20,7 +21,7 @@ public class Consumer {
         process(doubleInputs, myDoubleProcessor);
     }
 
-    public static <T>void process(List<T> inputs, java.util.function.Consumer<T> processor) {
+    public static <T>void process(List<T> inputs, Consumer<T> processor) {
         for (T input: inputs) {
             processor.accept(input);
         }
