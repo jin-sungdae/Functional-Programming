@@ -25,3 +25,11 @@ String str = "hello";
 Predicate<String> equalsToHello = str::equals;
 boolean helloEqualsWorld = equalsHello.test("world");
 ```
+- 해당 클래스의 인스턴스를 매개변수(parameter)로 넘겨 메서드를 실행해주는 함수
+```java
+Function<String, Integer> strLength = String:: length;
+int length = strLength.apply("Hello world!");
+
+BiPredicate<String, String> strEquals = String::equals;
+boolean result = strEquals.test("hello", "world");
+```
