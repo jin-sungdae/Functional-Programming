@@ -33,3 +33,4 @@ int length = strLength.apply("Hello world!");
 BiPredicate<String, String> strEquals = String::equals;
 boolean result = strEquals.test("hello", "world");
 ```
+

@@ -1,0 +1,13 @@
+## 스트림이란? 
+## What is Stream?
+- 데이터의 흐름
+- 컬렉션(Collection) 형태로 구성된 데이터를 람다를 이용해 간결하고 직관적으로 프로세스하게 해줌
+- For, while 등을 이용하던 기존 loop을 대체
+- 손쉽게 병렬 처리를 할 수 있게 해줌
+
+## Filter
+- 만족하는 데이터만 걸러내는데 사용
+- Predicat에 true를 반환하는 데이터만 존재하는 stream을 리턴
+```java
+Stream<T> filter(Predicate<? super T> predicate);
+```
