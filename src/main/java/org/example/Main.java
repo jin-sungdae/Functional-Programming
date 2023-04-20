@@ -5,6 +5,7 @@ import org.example.util.TriFunction;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,5 +31,13 @@ public class Main {
 
         int result4 = myAdder3.apply(3, 5, 6);
         System.out.println(result4);
+
+        /**
+         *
+         *  Supplier
+         */
+        System.out.println("================");
+        Supplier<String> myStringSupplier = () -> "hello world!";
+        System.out.println(myStringSupplier.get());
     }
 }
