@@ -74,7 +74,11 @@ public class StreamEx2 {
                 .collect(Collectors.toList());
         System.out.println(userIdList);
 
-
+        List<Order> ordersInErrorStatusIn24hrs = orders.stream()
+                .filter(order -> order.getStatus() == Order.OrderStatus.ERROR)
+                .filter(order -> order.getCreatedAt().isAfter(now.minusHours(24)))
+                .collect(Collectors.toList());
+        System.out.println(ordersInErrorStatusIn24hrs);
     }
 
 }
