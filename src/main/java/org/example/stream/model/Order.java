@@ -72,4 +72,16 @@ public class Order {
         this.orderLines = orderLines;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", createdAt=" + createdAt +
+                ", createdByUserId=" + createdByUserId +
+                ", status=" + status +
+                ", amount=" + amount +
+                ", orderLines=" + orderLines +
+                '}';
+    }
 }
