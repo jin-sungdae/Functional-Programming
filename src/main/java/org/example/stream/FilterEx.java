@@ -1,5 +1,6 @@
 package org.example.stream;
 
+import org.example.stream.model.Order;
 import org.example.stream.model.User;
 
 import java.math.BigDecimal;
@@ -47,6 +48,33 @@ public class FilterEx {
                 .filter(user -> !user.isVerified())
                 .collect(Collectors.toList());
         System.out.println(unverifiedUsers);
+
+
+        Order order1 = new Order()
+                .setId(1001)
+                .setStatus(Order.OrderStatus.CRETED);
+        Order order2 = new Order()
+                .setId(1002)
+                .setStatus(Order.OrderStatus.ERROR);
+        Order order3 = new Order()
+                .setId(1003)
+                .setStatus(Order.OrderStatus.PROCESSED);
+        Order order4 = new Order()
+                .setId(1004)
+                .setStatus(Order.OrderStatus.ERROR);
+        Order order5 = new Order()
+                .setId(1005)
+                .setStatus(Order.OrderStatus.IN_PROGRESS);
+
+        List<Order> orders = Arrays.asList(order1, order2, order3, order4, order5);
+
+        // Filter orders in Error status
+        List<Order> ErrorOrders = orders
+                .stream()
+                .filter(x -> x.getStatus() == Order.OrderStatus.ERROR)
+                .collect(Collectors.toList());
+
+        System.out.println(ErrorOrders);
     }
 }
 

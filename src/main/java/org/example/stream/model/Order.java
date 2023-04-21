@@ -12,10 +12,64 @@ public class Order {
     private BigDecimal amount;
     private List<OrderLine> orderLines;
 
-    enum OrderStatus {
+    public enum OrderStatus {
         CRETED,
         IN_PROGRESS,
         ERROR,
         PROCESSED
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public long getCreatedByUserId() {
+        return createdByUserId;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+
+    public List<OrderLine> getOrderLines() {
+        return orderLines;
+    }
+
+    public Order setId(long id) {
+        this.id = id;
+        return this;
+    }
+
+    public Order setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
+
+    public Order setCreatedByUserId(long createdByUserId) {
+        this.createdByUserId = createdByUserId;
+        return this;
+    }
+
+    public Order setStatus(OrderStatus status) {
+        this.status = status;
+        return this;
+    }
+
+    public Order setAmount(BigDecimal amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    public Order setOrderLines(List<OrderLine> orderLines) {
+        this.orderLines = orderLines;
+        return this;
     }
 }
