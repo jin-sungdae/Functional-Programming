@@ -1,7 +1,10 @@
 package org.example.stream;
 
+import org.example.stream.model.Order;
 import org.example.stream.model.User;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,5 +38,40 @@ public class SortEx {
                 .sorted((u1, u2) -> u1.getName().compareTo(u2.getName()))
                 .collect(Collectors.toList());
         System.out.println(sortedUsers );
+
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
+        Order order1 = new Order()
+                .setId(1001)
+                .setStatus(Order.OrderStatus.CRETED)
+                .setCreatedAt(now.minusHours(4))
+                .setCreatedByUserId(101);
+        Order order2 = new Order()
+                .setId(1002)
+                .setStatus(Order.OrderStatus.ERROR)
+                .setCreatedAt(now.minusHours(1))
+                .setCreatedByUserId(103);
+        Order order3 = new Order()
+                .setId(1003)
+                .setStatus(Order.OrderStatus.PROCESSED)
+                .setCreatedAt(now.minusHours(36))
+                .setCreatedByUserId(102);
+        Order order4 = new Order()
+                .setId(1004)
+                .setStatus(Order.OrderStatus.ERROR)
+                .setCreatedAt(now.minusHours(15))
+                .setCreatedByUserId(104);
+        Order order5 = new Order()
+                .setId(1005)
+                .setStatus(Order.OrderStatus.IN_PROGRESS)
+                .setCreatedAt(now.minusHours(10))
+                .setCreatedByUserId(101);
+
+        List<Order> orders = Arrays.asList(order1, order2, order3, order4, order5);
+
+        List<Order> sortedOrders = orders
+                .stream()
+                .sorted((u1, u2) -> u1.getCreatedAt().compareTo(u2.getCreatedAt()))
+                .collect(Collectors.toList());
+        System.out.println(sortedOrders);
     }
 }

@@ -26,3 +26,9 @@ Stream<T> filter(Predicate<? super T> predicate);
 Stream<T> sorted();
 Stream<T> sorted(Comparator<? super T> comparator);
 ```
+
+## Distinct
+- 중복되는 데이터가 제거된 stream을 리턴
+```java
+Stream<T> distinct();
+```
