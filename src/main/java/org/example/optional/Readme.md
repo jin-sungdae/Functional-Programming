@@ -35,3 +35,13 @@ public <X extends Throwable> T orElseThrow(Supplier<? extends X> exceptionSuppli
 - orElse - Optional이 null이 아니라면 Optional 안의 값을, null이라면 other로 공급된 값을 리턴
 - orElseGet - Optional이 null이 아니라면 Optional 안의 값을, null이라면 supplier로 공급되는 값을 리턴
 - orElseThrow - Optional이 null이 아니라면 Optional 안의 값을, null 이라면 exceptionSupplier로 공급되는 exception을 던짐
+
+## Optional 응용을 위해 알아야 할 것들
+```java
+public void ifPresent(Consumer<? super T> action)
+public <U> Optional<U> map(Function<? super T, ? extends U> mapper)
+public <U> Optional<U> flatMap(Function<? super T, ? extends Optional<? extends U>> mapper)
+```
+- ifPresent - Optional 이 null이 아니라면 action을 실행
+- map - Optional이 null이 아니라면 mapper를 적용
+- flatMap - mapper의 리턴 값이 또 다른 Optional이라면 한단계의 Optional이 되도록 납작하게 해줌
